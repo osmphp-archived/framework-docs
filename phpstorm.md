@@ -13,7 +13,6 @@ In case the project is remote, create/clone it locally the same way you did it o
 
 2. [Configure deployment](https://www.jetbrains.com/help/phpstorm/configuring-synchronization-with-a-remote-host.html) - connection, automatic upload and exclusions:
 
-        .env
         node_modules
         public/[development|testing|web|backend|frontend]
         temp/[development|testing|production]
