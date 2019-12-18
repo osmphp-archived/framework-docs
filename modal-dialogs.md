@@ -4,7 +4,7 @@
 
 Modal dialogs are displayed using [Mustache Templates](mustache-templates.html).
 
-## Basic Usage
+## Preloaded Dialogs
 
 1. Define in-page 
  
