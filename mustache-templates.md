@@ -6,7 +6,7 @@ Contents:
 
 {{ toc }}
 
-## Basic Usage
+## Preloaded Templates
 
 1. Define a Mustache template in any Blade template in a `<script>` element with `text/template` type:
 
@@ -40,7 +40,7 @@ Contents:
             macaw.afterInserted(element);
         });
 
-## Delayed Template Loading
+## Dynamically Loaded Templates
 
 The example above renders Mustache templates into the page source. It is even better to load Mustache templates after the page is loaded using AJAX:  
 
