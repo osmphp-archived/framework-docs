@@ -1,8 +1,6 @@
 # Mustache Templates
 
-Osm framework does all the rendering on the server using layers and Blade templates. In some cases, however, it may be beneficial to render HTML in JavaScript. 
-
-Use [Mustache](https://mustache.github.io/) to render HTML in JavaScript or any other Javascript templating library.
+Osm framework does all the rendering on the server using layers and Blade templates. In some cases, however, it is beneficial to render HTML in JavaScript. To do that, use [Mustache](https://mustache.github.io/) or any other Javascript templating library.
 
 Contents:
 
@@ -44,27 +42,13 @@ Contents:
 
 ## Delayed Template Loading
 
-The example above renders Mustache templates into the page source. It is even better to load Mustache templates after the page is loaded using AJAX. However, it's more work:  
+The example above renders Mustache templates into the page source. It is even better to load Mustache templates after the page is loaded using AJAX:  
 
-1. In shell, create a new route which will handle dynamic loading of a template:
+1. In shell, create a new Mustache template which will handle dynamic loading of a template:
 
-        osm create:route GET /templates/my-ajax-template
+        osm create:mustache my-ajax-template
         
-2. Edit the generated route definition in `{module_path}/config/{area}/routes.php`. Remove a hint that the route renders JSON and add that it is public:
-
-        'GET /templates/my-ajax-template' => [
-            'class' => Frontend::class,
-            'method' => 'myAjaxTemplate',
-            'public' => true,
-        ],
-
-3. In the generated controller method, return a server-side view rendering the Mustache template, it will automatically render into the response:
-
-        public function myAjaxTemplate() {
-            return View::new(['template' => '{module}.my_template_2']);
-        }
-
-4. Add Blade template `{module_path}/{area}/views/my_template_2.blade.php` rendering the Mustache template:
+2. Edit generated Blade template `{module_path}/{area}/views/my-ajax-template.blade.php` rendering the Mustache template:
 
         <div>@{{ placeholder }}</div>
         <script>
@@ -73,15 +57,7 @@ The example above renders Mustache templates into the page source. It is even be
 
     **Note**. AJAX Mustache template are not wrapped into `<script>` element and their `</script>` elements don't have to be escaped with `@`.
     
-5. Load the Mustache template after the page is loaded in `{module_path}/{area}/js/index.js`:
-
-        import templates from 'Osm_Framework_Js/vars/templates';
-        
-        // ...
-        
-        templates.add('my-ajax-template', {route: 'GET /templates/my-ajax-template'});
-
-6. Use the template in JavaScript by the ID you used in `templates.add()` call:
+3. Use the template in JavaScript by the ID you used in `templates.add()` call:
 
         import templates from 'Osm_Framework_Js/vars/templates';
         import Mustache from 'mustache';
