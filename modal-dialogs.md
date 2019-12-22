@@ -121,6 +121,6 @@ Contents:
 
     * cancel dialog if `Cancel` button or `Esc` is pressed;
     * submit form data via AJAX request if `OK` button is pressed;
-    * pass form AJAX response into `result` parameter of `then()` callback.
+    * pass form AJAX response (or `undefined` if the dialog has been canceled) into `result` parameter of `then()` callback.
  
 4. Design form layout and handle form submission as described in [Forms](forms.html).
