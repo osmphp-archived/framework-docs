@@ -44,7 +44,7 @@ Contents:
 
 The example above renders Mustache templates into the page source. It is even better to load Mustache templates after the page is loaded using AJAX:  
 
-1. In shell, create a new Mustache template which will handle dynamic loading of a template:
+1. In shell, generate files which will handle dynamic loading of a template:
 
         osm create:mustache my-ajax-template
         
@@ -57,7 +57,7 @@ The example above renders Mustache templates into the page source. It is even be
 
     **Note**. AJAX Mustache template are not wrapped into `<script>` element and their `</script>` elements don't have to be escaped with `@`.
     
-3. Use the template in JavaScript by the ID you used in `templates.add()` call:
+3. Use the template in JavaScript by its ID:
 
         import templates from 'Osm_Framework_Js/vars/templates';
         import Mustache from 'mustache';
