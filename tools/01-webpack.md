@@ -1,5 +1,13 @@
 # Webpack
 
+Short version: while making changes to source files, run Webpack file watching script in project's directory:
+
+    npm run watch
+
+Restart it if needed.
+
+Long version:  
+ 
 {{ toc }}
 
 ## Running Webpack
