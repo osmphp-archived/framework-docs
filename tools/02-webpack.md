@@ -52,3 +52,30 @@ For `testing` environment, Webpack and file-watching commands are:
 
     npm run testing-webpack
     npm run testing-watch
+    
+## Running Webpack In PHPStorm
+
+You can run file-watching script in PHPStorm. 
+
+### If Project Runs Locally
+
+1. Open new terminal tab using `Alt+F12` keyboard shortcut.
+
+2. Run the script:
+
+        npm run watch
+        
+## If Project Runs On Remote Server
+
+1. (first time only) Set up `Settings (Alt+F7) -> Tools -> SSH Terminal`:
+
+    * Set `Deployment server` to the one you configured while creating the project.
+    * Set `Default encoding` to `UTF-8`
+    
+2. Open new SSH terminal tab using `Ctrl+Shift+M H` keyboard shortcut.
+
+3. Navigate to the project directory and run the script:
+
+        cd {project_dir}
+        npm run watch
+                     

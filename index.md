@@ -1,3 +1,3 @@
-# Osm Framework Developer Guide #
+# Osm Framework #
 
 {{ child_pages }}

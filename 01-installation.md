@@ -51,7 +51,7 @@
 
 ## (Optional) Configuring The IDE
 
-Configure your IDE. See also [PhpStorm: Opening A Project](phpstorm.html#opening-a-project).
+Configure your IDE. See also [PhpStorm: Opening A Project](tools/phpstorm.html#opening-a-project).
 
 ## Used Variables
 
