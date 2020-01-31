@@ -32,7 +32,13 @@ Module full name (or just **module name**) is `App_Posts`, you can see it by run
 
 Base namespace of module's PHP classes is `App\Posts`. 
 
+### Current Module
+
 `osm create:module` command also makes new module the **current module**. It means that further  `osm create:*` commands will generate files in the current module directory, that is, `app/src/Posts`. 
+
+To change current module, run in the project's directory:
+
+    osm var module=App_Comments
 
 ## Module Class
 
