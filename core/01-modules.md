@@ -138,7 +138,7 @@ Some directories inside the module directory have special meaning:
 
 * `config/` - settings which the module contributes into the application configuration. See also [Configuration](configuration.html).
 * `migrations/` - migrations scripts which should be executed in order to install module-specific tables and data to the database (and to uninstall back if needed). See also [Migrations](../databases/migrations.html).
-* `resources/`, `frontend/`, `backend/` and other area asset directories contain module-specific [Blade templates](../web-pages/templates.html), [layers](../web-pages/layers.html), [JS](../scripts.html), [CSS and other files](../styles.html).   
+* `resources/`, `frontend/`, `backend/` and other area asset directories contain module-specific [Blade templates](../web-pages/templates.html), [layers](../web-pages/layers.html), [JS](../scripts.html), [CSS](../styles.html) and other files.   
 
 ### PHP Classes
 

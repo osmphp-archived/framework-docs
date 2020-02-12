@@ -37,7 +37,7 @@
 
     **TODO**. Until `hosts` command is implemented, edit your system's `hosts` file manually.
 
-2. Add the project to Web server configuration. Test HTTP. Run with `root` user:
+2. To add the project to Web server configuration, run with `root` user:
 
         php run config:nginx
 

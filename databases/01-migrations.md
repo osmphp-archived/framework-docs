@@ -10,12 +10,6 @@ Contents:
 
 {{ toc }}
 
-## Determinism
-
-The main use case for migrations is introducing database schema changes in a live production system in an deterministic way. A migration should make the same changes as your modules evolve or new modules are installed.
-
-**Example**. A migration add a `INT` column to some table using some class' `createIntColumn()` method. After 
-
 ## Running Migrations 
 
 Run migrations in the project's directory:
@@ -62,9 +56,36 @@ Either way, the command creates a migration class in the module's `migrations` d
 
 `up()` is executed by `php run migrations` command and `down()` is executed by `php run migrations-back` command.
 
-## Renaming Migrations
-
 ## `up()` Method
+
+In `up()` method, use one of these APIs for creating tables and filling them with initial data:
+
+1. [Laravel Schema and Query Builder](laravel-schema-and-query-builder.html)
+
+    * Most closely maps to the underlying raw SQL queries
+    * Well documented and widely used
+
+2. [Tables](tables.html) and [Formula Queries](formula-queries.html)
+
+    * Built on top of (1)  
+    * Allows unlimited number of table columns
+    * Allows custom column settings which can be used in project's logic
+    * Better support for PHPStorm code completion
+    * Compact query syntax
+    * Automated table relations 
+    * In future, the same query API will work over in-memory arrays
+
+3. [Sheets](sheets.html) and [Sheet Operations](sheet-operations.html)
+
+    * Built of top of (2)
+    * Facet counting
+    * Full-text search
+    * Virtual (calculated) columns
+    * Editable columns with default calculated values
+    * Batch editing of multiple records
+    * The data source of the [Data Table](../ui-library/data-tables.html) UI view
+
+**Notice**. Whichever API you use for creating a table, use the same API for working with its data. For instance, if you created a table using Laravel API, don't try to use formula queries over it.  
 
 ## `down()` Method 
 
@@ -72,3 +93,12 @@ Either way, the command creates a migration class in the module's `migrations` d
 
 * `up()` method creates a new table - in this case `down()` method should drop it
 * `up()` method alters other module's table - in this case `down()` method should undo those changes.
+
+## Renaming Migrations
+
+## Determinism
+
+The main use case for migrations is introducing database schema changes in a live production system in an deterministic way. A migration should make the same changes as your modules evolve or new modules are installed.
+
+**Example**. A migration add a `INT` column to some table using some class' `createIntColumn()` method. After 
+
