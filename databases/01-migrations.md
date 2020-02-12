@@ -94,11 +94,21 @@ In `up()` method, use one of these APIs for creating tables and filling them wit
 * `up()` method creates a new table - in this case `down()` method should drop it
 * `up()` method alters other module's table - in this case `down()` method should undo those changes.
 
-## Renaming Migrations
+## Stability
 
-## Determinism
+Once a migration is released (and used in production), don't change it. If you need to change the table structure, create a new migration for that. 
 
-The main use case for migrations is introducing database schema changes in a live production system in an deterministic way. A migration should make the same changes as your modules evolve or new modules are installed.
+Also keep an eye on the code you use in the migration scripts. 
 
-**Example**. A migration add a `INT` column to some table using some class' `createIntColumn()` method. After 
+If, let's say, you use a some custom method which creates a table with a single `id` column in your migration and after some time the same method is changed to create `id` and `created_at` columns instead, then it is essentially the same as modifying a migration file.
 
+If such changes happen, create a new migration file which would check tables created with the mentioned method and add `created_at` column to them.
+
+To avoid this king of problems, stick to using one 3 APIs listed above. These APIs are stable and even if they change in future there will be a clear procedure on how to migrate previously created tables to the updated structure.    
+
+## Migration Naming Convention
+
+Once a migration is released, don't rename or delete it (see previous part). 
+
+However, if you rename a migration while in development, do rename both the migration file and the migration class. If for example new migration name is `02_some_table.php`, the class name should be `SomeTable`. 
+ 
