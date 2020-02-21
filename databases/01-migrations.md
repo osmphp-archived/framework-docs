@@ -96,7 +96,7 @@ In `up()` method, use one of these APIs for creating tables and filling them wit
 
 ## Stability
 
-Once a migration is released (and used in production), don't change it. If you need to change the table structure, create a new migration for that. 
+Once a migration is released (and used in production), don't change, rename or delete it. If you need to change the table structure, create a new migration for that. 
 
 Also keep an eye on the code you use in the migration scripts. 
 
@@ -106,9 +106,7 @@ If such changes happen, create a new migration file which would check tables cre
 
 To avoid this king of problems, stick to using one 3 APIs listed above. These APIs are stable and even if they change in future there will be a clear procedure on how to migrate previously created tables to the updated structure.    
 
-## Migration Naming Convention
+## Migration Naming Conventions
 
-Once a migration is released, don't rename or delete it (see previous part). 
-
-However, if you rename a migration while in development, do rename both the migration file and the migration class. If for example new migration name is `02_some_table.php`, the class name should be `SomeTable`. 
+If you rename a migration while in development, do rename both the migration file and the migration class. If for example new migration name is `02_some_table.php`, the class name should be `SomeTable`. 
  
