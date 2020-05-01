@@ -1,3 +1,3 @@
-# Databases
+# Ideas 
 
 {{ child_pages }}
