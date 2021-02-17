@@ -1,3 +1,0 @@
-# Tools
-
-{{ child_pages }}

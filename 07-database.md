@@ -1,3 +1,0 @@
-# Database
-
-{{ child_pages }}

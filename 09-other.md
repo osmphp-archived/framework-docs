@@ -1,3 +1,0 @@
-# Other
-
-{{ child_pages }}
